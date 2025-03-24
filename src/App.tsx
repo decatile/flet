@@ -1,5 +1,6 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { Posts } from "./components/Posts"
+import { Refresh } from "./components/Refresh"
 
 const queryClient = new QueryClient()
 
@@ -8,6 +9,7 @@ export function App() {
     <QueryClientProvider client={queryClient}>
         <div className="w-full flex justify-center">
           <Posts />
+          <Refresh />
         </div>
     </QueryClientProvider>
   )
