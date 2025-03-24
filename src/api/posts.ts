@@ -1,5 +1,5 @@
 import { z } from "zod";
-import createCall from "./base";
+import { createCall } from "./utils";
 
 const schema = z.object({
     userId: z.number(),
@@ -8,4 +8,6 @@ const schema = z.object({
     body: z.string()
 }).array()
 
-export const getPosts = createCall('https://jsonplaceholder.typicode.com/posts', schema)
+export type Posts = z.output<typeof schema>
+
+export const getPosts = createCall<Posts>('https://jsonplaceholder.typicode.com/posts', schema)

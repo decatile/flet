@@ -1,5 +1,5 @@
 import { z } from "zod";
-import createCall from "./base";
+import { createCall } from "./utils";
 
 const schema = z.object({
     id: z.number(),
@@ -25,4 +25,6 @@ const schema = z.object({
     }),
 }).array();
 
-export const getUsers = createCall('https://jsonplaceholder.typicode.com/users', schema)
+export type Users = z.output<typeof schema>
+
+export const getUsers = createCall<Users>('https://jsonplaceholder.typicode.com/users', schema)
