@@ -7,7 +7,7 @@ const queryClient = new QueryClient()
 export function App() {
   return (
     <QueryClientProvider client={queryClient}>
-        <div className="w-full flex justify-center">
+        <div className="w-full min-h-screen flex justify-center">
           <Posts />
           <Refresh />
         </div>

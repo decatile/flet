@@ -10,3 +10,4 @@ export async function getAll(data: { signal: AbortSignal }) {
     ])
     return { users, posts, comments }
 }
+
